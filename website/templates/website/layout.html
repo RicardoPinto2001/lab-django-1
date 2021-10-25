@@ -1,0 +1,32 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    		<title>Website</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+	</head>
+	<body>
+	    <header class="jumbotron text-center">
+			<h1>Titulo Website</h1>
+			<p>Um Website Fixe</p>
+			<nav>
+				<a href="{% url 'website:home' %}" class="btn btn-info">Home</a>
+				<!--<a href="" class="btn btn-info"></a> -->
+				<!--<a href="" class="btn btn-info"></a> -->
+			</nav>
+		</header>
+	    <article class="container">
+		<main class="col-sm-6">
+			{% block main %}
+			{% endblock main %}
+		</main>
+		<aside class="col-sm-6">
+			{% load static %}
+			<img src="{% static 'website/images/image.png' %}">
+		</aside>
+	    </article>
+	    <footer>Texto rodapé</footer>
+	</body>
+</html>
